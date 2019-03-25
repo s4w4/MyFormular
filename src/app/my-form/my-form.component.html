@@ -1,0 +1,8 @@
+<div class="myFormWrapper">
+  <app-my-form-list [ngClass]="{ myFormListContainer: true, submitted: isSubmitted }"
+                    #myFormList
+  >
+  </app-my-form-list>
+  <input class="myFormButton" type="button" (click)="onClick()" value="Bewerben" />
+  {{ showItems() }}
+</div>
