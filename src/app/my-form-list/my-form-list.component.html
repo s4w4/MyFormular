@@ -1,9 +1,7 @@
-<div class="myFormListWrapper">
-  <app-my-form-item class="myFormItem first"
-                    [item]="items[0]"
-  ></app-my-form-item>
-  <app-my-form-item class="myFormItem"
-                    *ngFor="let item of items.slice(1)"
-                    [item]="item"
-  ></app-my-form-item>
-</div>
+<app-my-form-item class="myFormItem first"
+                  [item]="items[0]"
+></app-my-form-item>
+<app-my-form-item class="myFormItem"
+                  *ngFor="let item of items.slice(1)"
+                  [item]="item"
+></app-my-form-item>

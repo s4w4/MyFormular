@@ -1,7 +1,5 @@
-<div class="myFormItemWrapper">
-  <label class="myFormItemLabel" >{{item.title}}</label>
-  <input [ngClass]="{myFormItemInput: true, error: validate()}" 
-         type="text" 
-         value={{item.value}} 
-         (input)="onChange($event.target.value)" />
-</div>
+<label class="myFormItemLabel" >{{item.title}}</label>
+<input [ngClass]="{myFormItemInput: true, error: validate()}" 
+       type="text" 
+       value={{item.value}} 
+       (input)="onChange($event.target.value)" />

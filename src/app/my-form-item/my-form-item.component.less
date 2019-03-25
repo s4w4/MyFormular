@@ -1,0 +1,24 @@
+@import '../../styles';
+
+:host {
+  display: flex;
+  flex-direction: column;
+
+  .myFormItemLabel, .myFormItemInput {
+    height: 3vw;
+  }
+
+  .myFormItemInput {
+    font-size: 1.5vw;
+    border: 2px solid @themecolorVioletDark;
+  }
+
+  .myFormItemLabel {
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 0.5vw;
+    font-size: 0.8vw;
+    font-family: 'Arial'
+  }
+}
