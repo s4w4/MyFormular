@@ -4,7 +4,15 @@
   height: 100%;
   text-align: right;
   display: grid;
-  grid-template-columns: 4vw auto 4vw;
-  grid-template-rows: 20fr auto 12fr;
+
+  &.portrait {
+    grid-template-columns: 4vw 1fr 4vw;
+    grid-template-rows: 4vw auto auto;
+  }
+
+  &.landscape {
+    grid-template-columns: 4vw auto 4vw;
+    grid-template-rows: 20fr auto 12fr;
+  }
 }
 

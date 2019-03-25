@@ -7,13 +7,40 @@
   background: white;
   grid-area: ~"2/2/3/3";
 
+  .buttonContainer {
+    margin-top: 1vw;
+  }
   .myFormButton {
     margin-top: 0.2vw;
-    height: 3vw;
     background-color: @themecolorVioletDark;
     border: 1px solid @themecolorVioletDark;
-    width: 20%;
     color: @themecolorWhite;
     text-align: left;
+    border-radius: 0;
+  }
+}
+
+.portrait {
+  :host {
+    grid-template-rows: 1fr auto;
+    align-items: flex-end;
+
+    .myFormButton {
+      padding-left: 3vw;
+      font-size: 2vw;
+      height: 8vw;
+      width: 100%;
+    }
+  }
+}
+
+.landscape {
+  :host {
+    .myFormButton {
+      padding-left: 1vw;
+      font-size: 1vw;
+      height: 3vw;
+      width: 20%;
+    }
   }
 }

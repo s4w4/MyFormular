@@ -1,9 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-export enum ORIENTATION_TYPE {
-  PORTRAIT = 'portrait',
-  LANDSCAPE = 'landscape'
-}
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,20 +7,24 @@ export enum ORIENTATION_TYPE {
 })
 export class AppComponent implements OnInit {
   public title = 'MyFormular';
-  public orientation: ORIENTATION_TYPE;
+  @HostBinding('class.portrait') portraitField = false;
+  @HostBinding('class.landscape') landscapeField = false;
 
   public ngOnInit(): void {
     window.addEventListener('orientationchange', this.onOrientationChange.bind(this), false);
     this.onOrientationChange();
   }
 
+
   private onOrientationChange(): void {
     const orientationAngle = (window.screen.orientation) ? window.screen.orientation.angle : window.orientation;
 
     if (orientationAngle === 0 || orientationAngle === 180) {
-      this.orientation = ORIENTATION_TYPE.PORTRAIT;
+      this.portraitField = true;
+      this.landscapeField = false;
     } else {
-      this.orientation = ORIENTATION_TYPE.LANDSCAPE;
+      this.portraitField = false;
+      this.landscapeField = true;
     }
   }
 }
