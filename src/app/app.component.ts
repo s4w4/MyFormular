@@ -8,23 +8,31 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 export class AppComponent implements OnInit {
   public title = 'MyFormular';
   @HostBinding('class.portrait') portraitField = false;
-  @HostBinding('class.landscape') landscapeField = false;
+  @HostBinding('class.landscape') landscapeField = true;
 
   public ngOnInit(): void {
     window.addEventListener('orientationchange', this.onOrientationChange.bind(this), false);
     this.onOrientationChange();
   }
 
-
   private onOrientationChange(): void {
     const orientationAngle = (window.screen.orientation) ? window.screen.orientation.angle : window.orientation;
-
-    if (orientationAngle === 0 || orientationAngle === 180) {
-      this.portraitField = true;
-      this.landscapeField = false;
+    if (window.screen.orientation) {
+      if ( window.screen.orientation.type.includes('portrait') ) {
+        this.portraitField = true;
+        this.landscapeField = false;
+      } else {
+        this.portraitField = false;
+        this.landscapeField = true;
+      }
     } else {
-      this.portraitField = false;
-      this.landscapeField = true;
+      if (orientationAngle === 0 || orientationAngle === 180) {
+        this.portraitField = true;
+        this.landscapeField = false;
+      } else {
+        this.portraitField = false;
+        this.landscapeField = true;
+      }
     }
   }
 }
